@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Log in</title>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+</head>
+<body>
+        <h1> Welcome back to ourCommunity! </h1>
+        <h2> Enter your inforation and log in </h2>
+            <div class="container">
+                <h1> Log in : </h1>
+                <form action="{{ url_for('log_in') }}" method="post">
+                    <br>
+                    <label for="uname"><b>Username : </b></label>
+                    <input class="form-control" type="text" placeholder="Enter Username" name="uname" required>
+                    <br>
+                    <br>
+                    <label for="psw"><b>Password : </b></label>
+                    <input class="form-control" type="password" placeholder="Enter Password" name="psw" required>
+                    <br>
+                    <br>
+                    <button id= login type="submit">LogIn</button>
+                </form>
+            </div>
+        <p><a href="{{url_for('sign_up')}}"> sign up ? </a></p>
+        <p><a href="{{url_for('home')}}"> return to home </a></p>
+</body>
+</html>

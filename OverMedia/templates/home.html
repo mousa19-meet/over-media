@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> HomePage </title>
+</head>
+<body>
+	<p>stuff & stuff </p>
+	<div class="everything">
+      <div class="box">
+        <h1> Tips : </h1>
+      </div>
+      <div class="container"> 
+        <div class="all_tips">
+            <ul>
+              {%for post in posts%}
+              <li> {{ post }}</li>
+                      <br>
+              {% endfor %}
+            </ul>
+        </div>
+          <a href='{{url_for("create_tip")}}'>
+            <div class="post_tip">
+            <h2> POST A TIP ? </h2>
+            </div>
+          </a>
+        </div>
+      </div>
+
+</body>
+</html>
