@@ -1,18 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title> HomePage </title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style>
+
+body {
+  margin: 0;
+}
+ 
+ .navbar {
+  background-color: lightblue;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.tips_head {
+  border-color: blue;
+  text-align: center;
+  border-style: solid;
+}
+
+.all_tips {
+  font-size: 25px;
+}
+
+.post-tip {
+  border-color: red;
+  border-style: dashed;
+}
+
+   
+</style>
 </head>
+
 <body>
-  <div>
-    <p><a href="{{url_for('log_in')}}"> log in </a></p>
-    <p><a href="{{url_for('quiz')}}"> quiz </a></p>
-  </div>
-	<p>stuff & stuff </p>
-	<div class="everything">
-        <h1> Tips : </h1>
+
+  <div class="navbar">
+    <div class="row">
+
+      <div class="col-sm-4">
+        <a  href="{{url_for('log_in')}}">log in</a>
       </div>
+
+      <div class="col-sm-4">
+        <a  href="{{url_for('quiz')}}"> quiz </a>
+      </div>
+
+      <div class="col-sm-2" class="text-center">
+        <a  href="{{url_for('sign_up')}}">sign up</a>
+      </div>
+
+    </div>
+  </div>
+
+
+	<p class="text-center">stuff & stuff </p>
+
+	<div class="tips_head">
+        <h1> Tips : </h1>
+        </div>
       <div class="container"> 
+
         <div class="all_tips">
             <ul>
               {%for post in posts%}
@@ -21,15 +73,14 @@
               {% endfor %}
             </ul>
         </div>
+
+        <div class="post-tip">
           <a href='{{url_for("create_tip")}}'>
-            <div class="post_tip">
             <h2> POST A TIP ? </h2>
-            </div>
           </a>
         </div>
-      </div>
-</section>
 
-</center>
+    </div>
+
 </body>
 </html>

@@ -16,7 +16,7 @@ def home():
         status = query_user_by_name(user_name).status
         return render_template('home_loggedin.html',name="logged in as : " + user_name ,status= status ,posts=posts)
     else :
-        return render_template('home.html')
+        return render_template('home.html',posts=posts)
 
 @app.route('/quiz', methods=["GET","POST"])
 def quiz():
