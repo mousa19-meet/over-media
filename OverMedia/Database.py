@@ -14,6 +14,12 @@ def add_User(username, password,status):
     session.add(user_object)
     session.commit()
 
+def update_User(name,status):
+   product_object = session.query(
+       User).filter_by(
+       name=name).first()
+   product_object.status = status
+
 def query_user_by_name(username):
 	name = session.query(
 		User).filter_by(name=username).first()
@@ -51,4 +57,3 @@ def delete_all_posts():
 def delete_post_by_id(post_id):
     post = session.query(Post).filter_by(id_table=post_id).delete()
     session.commit()
-
