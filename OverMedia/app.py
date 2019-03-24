@@ -97,10 +97,13 @@ def sign_up():
         name = request.form['username'] 
         password = request.form['psw']
         status = 'new'
-
-        add_User(name,password,status)
-        flash('You were successfully signed up')
-        return redirect(url_for('log_in'))
+        if query_user_by_name(name) == None:
+            add_User(name,password,status)
+            flash('You were successfully signed up')
+            return redirect(url_for('log_in'))
+        else:
+            flash('username alreadt taken, try another one.')
+            return render_template('sign_up.html')
 
     else:
         return render_template('sign_up.html')
