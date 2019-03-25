@@ -1,31 +1,60 @@
 <!DOCTYPE html>
 <html>
-
-    <head>
-
+<head>
         <title> Post Tip </title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    </head>
-    <body>
+  <style>
+body {
+    background:#CCEEE8;
+    background:linear-gradient(to right, #95eddd,#7cead6);
+}
+.text-mid {
+    text-align: center;
+}
+div.container {
+    border-style: solid;
+    border-radius: 15px;
+    border-width: medium;
+    background: white;
+    margin-top:25px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    width: 50%;
+}
+.round {
+    border-radius: 25px;
+    background-color: #AFAFAF;
+}
 
-        <h1> Welcome to OverMedia </h1>
+p {
+    font-size: large;
+}  
+
+
+  </style>
+</head>
+<body>
+
+        <h1 class="text-mid"> Welcome to OverMedia </h1>
 
           <div class="container" >
             <br>
-                <h1> Wrtie your tip down below </h1>
-                <h2> make sure to use less than 500 characters </h2>
+                <h1 class="text-mid"> Wrtie your tip down below </h1>
+                <h2 class="text-mid"> make sure to use less than 500 characters </h2>
             <br>
                 <form action="/create-tip", method="POST">
             <br>
-                <input class="form-control" size="70" height="200" maxlength="500" type="text" placeholder="Enter your post" name="tip_submit" required>
+                <input class="form-control" size="70" height="200" maxlength="500" type="text" placeholder="Enter your tip" name="tip_submit" required>
             <br>
-                <button type="submit"> Submit </button>
+                <button type="submit" class="btn btn-lg btn-block round"> Submit </button>
            <br>
            <br>
                </form>
           </div>
 
-        <p><a href="{{url_for('home')}}"> return to home </a></p>
+        <p class="text-mid"><a href="{{url_for('home')}}"> HomePage </a></p>
 
     </body>
     

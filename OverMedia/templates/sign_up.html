@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html>
+<head>
 
-    <head>
+    <title>Sign Up</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <title>Sign Up</title>
-        
+<style>
+
+body {
+    background:#CCEEE8;
+    background:linear-gradient(to right, #95eddd,#7cead6);
+}
+.text-mid {
+    text-align: center;
+}
+div.container {
+    border-style: solid;
+    border-radius: 15px;
+    border-width: medium;
+    background: white;
+    margin-top:25px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    width: 50%;
+}
+.round {
+    border-radius: 25px;
+    background-color: #AFAFAF;
+}
+ul {
+    list-style-type: none;
+    color: #ff5634;
+    text-align: center;
+}
+p {
+    font-size: large;
+}
+
+</style>
+</head>
+<body>
+
+        <h1 class="text-mid"> Welcome to OverMedia!  </h1>
+        <h2 class="text-mid"> Enter your information and sign up  </h2>
+
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     <ul>
@@ -14,14 +54,9 @@
                     </ul>
                 {% endif %}
             {% endwith %}
-    </head>
-    <body>
-
-        <h1 >Welcome to OverMedia </h1>
-        <h2> Enter your information aand sign up </h2>
-
+            
             <div class="container">
-                <h1> Sign Up : </h1>
+                <h1 class="text-mid"> Sign Up : </h1>
                 <form action="/sign-up" method="post">
             <br>
                 <label for="username"><b> <font color='black'>Username :</font></b></label>
@@ -32,12 +67,14 @@
                 <input class="form-control" type="password" placeholder="Enter Password" name="psw" required>
             <br>
             <br>
-                    <button id=submit type="submit" class="signupbtn">SignUp</button>
+                    <button id=submit type="submit" class="btn btn-lg btn-block round">SignUp</button>
                 </form>
             </div>
 
-        <p><a href="{{url_for('log_in')}}"> log in ? </a></p>
-        <p><a href="{{url_for('home')}}"> return to home </a></p>
+        <p class="text-mid"><a href="{{url_for('log_in')}}"> Log In ? </a></p>
+        <p class="text-mid"><a href="{{url_for('home')}}"> HomePage </a></p>
     </body>
     
+
+
 </html>

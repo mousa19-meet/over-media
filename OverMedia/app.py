@@ -102,7 +102,7 @@ def sign_up():
             flash('You were successfully signed up')
             return redirect(url_for('log_in'))
         else:
-            flash('username alreadt taken, try another one.')
+            flash('Username already taken, please try another one.')
             return render_template('sign_up.html')
 
     else:

@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-		Quiz
-	</title>
+	<title> Quiz </title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+
+body {
+    background:#CCEEE8;
+    background:linear-gradient(to right, #95eddd,#7cead6);
+}
+p.left {
+	padding: 7px;
+	float:left;
+	margin-left: 5%;
+	border-radius: 10px;
+	border-style: solid;
+	width:40%;
+}
+p.right {
+	padding: 7px;
+	margin-right: 5%;
+	float:right;
+	border-radius: 10px;
+	border-style: solid;
+	width:40%;
+}
+.text-mid {
+	text-align: center;
+}
+.round {
+	margin-left: 5%;
+    border-radius: 25px;
+    background-color: #AFAFAF;
+    width: 40%;
+}
+.lastp {
+	margin-left: 22%;
+}
+
+	</style>
 </head>
 <body>
-
+	<h2 class="text-mid"> Take our quick quiz ! </h2>
 	<form action="/quiz" method="post">
 
-		<p> Do you leave your phone at home ? <br>
+		
+		<p class="left"> Do you leave your phone at home ? <br>
 			<input type="radio" name="Q1" value="1"> I rarely carry my phone with me.
 		<br>
 			<input type="radio" name="Q1" value="2"> I went out without my phone at least twice in the past week.
@@ -20,7 +57,7 @@
 		<br>
 		</p>
 
-		<p> How many times has your phone interrupted your sleep, or you slept less due to using your phone ? <br>
+		<p class="right"> How many times has your phone interrupted your sleep, or you slept less due to using your phone ? <br>
 			<input type="radio" name="Q2" value="1"> Rarely.
 		<br>
 			<input type="radio" name="Q2" value="2"> Once or twice the past month.
@@ -31,7 +68,7 @@
 		<br>
 		</p>
 
-		<p> Where is your phone when you sleep ? <br>
+		<p class="left"> Where is your phone when you sleep ? <br>
 			<input type="radio" name="Q3" value="1"> Outside my room.
 		<br>
 			<input type="radio" name="Q3" value="2"> Inside my room, far from the bed.
@@ -42,7 +79,7 @@
 		<br>
 		</p>
 
-		<p> How many chat apps do you regularly use ?
+		<p class="right"> How many chat apps do you regularly use ?
 		(Instagram, Whatsapp, Messenger, Snapchat, Wattpad, Hangout, Viber, etc.) <br>
 			<input type="radio" name="Q4" value="1"> Just one.
 		<br>
@@ -54,7 +91,7 @@
 		<br>
 		</p>
 
-		<p> Assuming you forget your phone at home. How would you feel ? <br>
+		<p class="left"> Assuming you forget your phone at home. How would you feel ? <br>
 			<input type="radio" name="Q5" value="1"> Comfortable and relaxed.
 		<br>
 			<input type="radio" name="Q5" value="2"> Indifferent.
@@ -67,7 +104,7 @@
 		<br>
 		</p>
 
-		<P> Approximately, how many hours a day do you use your phone ? <br>
+		<p class="right"> Approximately, how many hours a day do you use your phone ? <br>
 			<input type="radio" name="Q6" value="1"> Less than an hour a day.
 		<br>
 			<input type="radio" name="Q6" value="2"> Between 1 and 3 hours a day.
@@ -82,10 +119,10 @@
 		<br>
 		</p>
 
-	<br>
-		<input type="submit" value="Submit">
-		<input type="reset" value="Clear Form">
+
+		<button id=submit type="submit" class="btn btn-lg  round"> Sumbit </button>
 	</form>
 
+	       <p class="lastp"><a href="{{url_for('home')}}"> HomePage </a></p>
 </body>
 </html>
