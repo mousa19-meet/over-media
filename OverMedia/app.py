@@ -9,12 +9,11 @@ app.config['SESSION_TYPE'] = 'filesystem'
 @app.route('/')
 def home():
     posts = query_all_posts() 
-    posts = posts[::-1]
 
     if 'username' in flask_session:
         user_name = flask_session['username']
         status = query_user_by_name(user_name).status
-        return render_template('home_loggedin.html',name="logged in as : " + user_name ,status= status ,posts=posts)
+        return render_template('home_loggedin.html',name="Hello,  " + user_name ,status= status ,posts=posts)
     else :
         return render_template('home.html',posts=posts)
 
