@@ -19,6 +19,7 @@ def update_User(name,status):
        User).filter_by(
        name=name).first()
    product_object.status = status
+   session.commit()
 
 def query_user_by_name(username):
 	name = session.query(
