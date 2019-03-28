@@ -17,6 +17,16 @@ def home():
     else :
         return render_template('home.html',posts=posts)
 
+@app.route("/calendar", methods=["GET","POST"])
+def calendar():
+    if 'username' in flask_session:
+        user_name = flask_session["username"]
+        if request.method == "GET":
+            return render_template('calendar.html')
+        else:
+            return redirect(url_for('log_in'))
+
+
 @app.route('/quiz', methods=["GET","POST"])
 def quiz():
     if 'username' in flask_session:

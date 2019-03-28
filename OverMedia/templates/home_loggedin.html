@@ -68,15 +68,19 @@ body {
   </div>
 
   <div class="navbar" class="row">
-      <div class="col-sm-4" class="text-center">
+      <div class="col-sm-3" class="text-center">
         <p> {{ name }}. <br> You are  {{ status }}</p>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <a  href="{{url_for('quiz')}}"> Quiz </a>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-3">
+        <a href="{{url_for('quiz')}}"> Calendar </a>
+      </div>
+
+      <div class="col-sm-3">
         <a  href="{{url_for('log_out')}}">log out ?</a>
       </div>
   </div>
